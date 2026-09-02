@@ -20,7 +20,25 @@ body { font-family:'Open Sans',sans-serif; color:#1E3155; background:#fff; line-
 .nav-brand .txt span { display:block; font-size:10px; color:rgba(255,255,255,0.7); font-weight:400; }
 .nav-70 { display:flex; align-items:center; gap:8px; }
 .nav-70 .yrs { color:var(--gold); font-size:15px; font-weight:800; letter-spacing:1px; white-space:nowrap; }
-.nav-70 .flags { display:flex; gap:4px; font-size:14px; line-height:1; }
+.nav-70 .flags { display:flex; gap:5px; }
+.flag { width:22px; height:15px; border-radius:2px; overflow:hidden; box-shadow:0 0 0 1px rgba(255,255,255,0.25); flex-shrink:0; }
+/* Bandera Chile */
+.flag-cl { background:
+  linear-gradient(#fff 50%, #d52b1e 50%); position:relative; }
+.flag-cl::before { content:""; position:absolute; top:0; left:0; width:40%; height:50%; background:#0039a6; }
+.flag-cl::after { content:"\2605"; position:absolute; top:50%; left:20%; transform:translate(-50%,-50%); color:#fff; font-size:9px; line-height:1; }
+/* Bandera Reino Unido */
+.flag-gb { background:#012169; position:relative; }
+.flag-gb::before { content:""; position:absolute; inset:0;
+  background:
+   linear-gradient(to bottom right, transparent calc(50% - 1.2px), #fff calc(50% - 1.2px), #fff calc(50% + 1.2px), transparent calc(50% + 1.2px)),
+   linear-gradient(to bottom left, transparent calc(50% - 1.2px), #fff calc(50% - 1.2px), #fff calc(50% + 1.2px), transparent calc(50% + 1.2px)); }
+.flag-gb::after { content:""; position:absolute; inset:0;
+  background:
+   linear-gradient(#c8102e,#c8102e) center/100% 4px no-repeat,
+   linear-gradient(#c8102e,#c8102e) center/4px 100% no-repeat,
+   linear-gradient(#fff,#fff) center/100% 7px no-repeat,
+   linear-gradient(#fff,#fff) center/7px 100% no-repeat; }
 
 /* HERO */
 .hero { background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:32px 24px 36px; text-align:center; position:relative; flex-shrink:0; }
@@ -95,7 +113,7 @@ footer a { color:var(--gold); text-decoration:none; }
     </div>
     <div class="nav-70">
       <span class="yrs">+70 YEARS</span>
-      <span class="flags">&#127464;&#127473; &#127468;&#127463;</span>
+      <span class="flags"><span class="flag flag-cl" title="Chile"></span><span class="flag flag-gb" title="Reino Unido"></span></span>
     </div>
   </div>
 </nav>
