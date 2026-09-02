@@ -1,0 +1,5 @@
+# Configuración de despliegue Netlify
+# Publica el contenido de la carpeta web/ como sitio estático.
+[build]
+  publish = "web"
+  command = ""
