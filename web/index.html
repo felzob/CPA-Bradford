@@ -196,8 +196,22 @@ async function consultar(){
   mostrarResultado();
 }
 
+function extraerNombrePila(nombreCompleto, apellidos){
+  // El nombre viene como "ApellidoP ApellidoM Nombres". Quitamos los apellidos de la familia.
+  const norm = s => (s||"").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();
+  const apellidosSet = norm(apellidos).split(/\s+/).filter(Boolean);
+  const palabras = (nombreCompleto||"").trim().split(/\s+/);
+  // Descartar las palabras iniciales que coincidan con apellidos
+  const nombres = palabras.filter(p => !apellidosSet.includes(norm(p)));
+  // Si quedó vacío (raro), usar la última palabra
+  const pila = nombres.length ? nombres[0] : palabras[palabras.length-1];
+  return pila.charAt(0).toUpperCase() + pila.slice(1).toLowerCase();
+}
+
 function mostrarResultado(){
-  const primerNombre = usuario.nombre.split(" ")[0];
+  // Usar los apellidos de la primera familia para limpiar el nombre
+  const apellidos = familias[0] ? familias[0].familia : "";
+  const primerNombre = extraerNombrePila(usuario.nombre, apellidos);
   document.getElementById("saludo").textContent = `Hola, ${primerNombre}`;
   const cont=document.getElementById("fam-list"); cont.innerHTML="";
   let hayNoSocio=false;
