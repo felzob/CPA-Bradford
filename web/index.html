@@ -15,10 +15,11 @@ body { font-family:'Open Sans',sans-serif; color:#1E3155; background:#fff; line-
 .nav { background:var(--navy); padding:12px 0; flex-shrink:0; }
 .nav-inner { max-width:1080px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; }
 .nav-brand { display:flex; align-items:center; gap:12px; }
-.nav-brand img { height:38px; }
+.nav-brand img { height:42px; }
 .nav-brand .txt { color:#fff; font-weight:700; font-size:14px; line-height:1.2; }
 .nav-brand .txt span { display:block; font-size:10px; color:rgba(255,255,255,0.7); font-weight:400; }
-.nav .years { color:var(--gold); font-size:11px; font-weight:700; letter-spacing:1px; }
+.nav-70-wrap { background:#fff; border-radius:8px; padding:6px 12px; display:flex; align-items:center; }
+.nav-70 { height:22px; display:block; }
 
 /* HERO */
 .hero { background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:32px 24px 36px; text-align:center; position:relative; flex-shrink:0; }
@@ -74,7 +75,13 @@ footer .fdata { font-size:11px; margin-top:4px; }
 footer a { color:var(--gold); text-decoration:none; }
 
 .hidden { display:none; }
-@media (max-width:560px){ .stats-bar{ flex-direction:column; margin-top:-16px; } body{ min-height:auto; } }
+@media (max-width:560px){
+  .stats-bar{ flex-direction:column; margin-top:-16px; }
+  body{ min-height:auto; }
+  .nav-brand .txt{ font-size:12px; }
+  .nav-brand img{ height:34px; }
+  .nav-70{ height:18px; }
+}
 </style>
 </head>
 <body>
@@ -82,10 +89,12 @@ footer a { color:var(--gold); text-decoration:none; }
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-brand">
-      <img src="logo.png" alt="Bradford School" onerror="this.style.display='none'">
+      <img src="logo-bradford.png" alt="Bradford School" onerror="this.style.display='none'">
       <div class="txt">Centro de Padres y Apoderados<span>Bradford School</span></div>
     </div>
-    <div class="years">+70 YEARS</div>
+    <div class="nav-70-wrap">
+      <img class="nav-70" src="logo-70years.png" alt="+70 Years Bradford" onerror="this.parentElement.style.display='none'">
+    </div>
   </div>
 </nav>
 
