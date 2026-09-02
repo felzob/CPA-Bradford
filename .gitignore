@@ -12,3 +12,4 @@ db/catastro_familias.json
 .DS_Store
 node_modules/
 .supabase/
+supabase/.temp/

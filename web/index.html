@@ -8,78 +8,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Fredoka:wght@500;600;700&display=swap');
 :root { --navy:#002060; --navy-deep:#001845; --gold:#FFC000; --green:#2e7d32; --red:#c62828; --gray:#6B7B8D; --cream:#f7f8fa; }
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Open Sans',sans-serif; color:#1E3155; background:#fff; line-height:1.6; }
+html,body { height:100%; }
+body { font-family:'Open Sans',sans-serif; color:#1E3155; background:#fff; line-height:1.55; display:flex; flex-direction:column; min-height:100vh; }
 
 /* NAVBAR */
-.nav { background:var(--navy); padding:16px 0; }
+.nav { background:var(--navy); padding:12px 0; flex-shrink:0; }
 .nav-inner { max-width:1080px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; }
-.nav-brand { display:flex; align-items:center; gap:14px; }
-.nav-brand img { height:46px; }
-.nav-brand .txt { color:#fff; font-weight:700; font-size:15px; line-height:1.2; }
-.nav-brand .txt span { display:block; font-size:11px; color:rgba(255,255,255,0.7); font-weight:400; }
-.nav .years { color:var(--gold); font-size:12px; font-weight:700; letter-spacing:1px; }
+.nav-brand { display:flex; align-items:center; gap:12px; }
+.nav-brand img { height:38px; }
+.nav-brand .txt { color:#fff; font-weight:700; font-size:14px; line-height:1.2; }
+.nav-brand .txt span { display:block; font-size:10px; color:rgba(255,255,255,0.7); font-weight:400; }
+.nav .years { color:var(--gold); font-size:11px; font-weight:700; letter-spacing:1px; }
 
 /* HERO */
-.hero { background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:56px 24px 64px; text-align:center; position:relative; overflow:hidden; }
-.hero::after { content:""; position:absolute; bottom:0; left:0; right:0; height:5px; background:var(--gold); }
-.hero h1 { font-family:'Fredoka',sans-serif; font-size:clamp(26px,4vw,40px); font-weight:600; margin-bottom:14px; }
-.hero p { font-size:clamp(15px,2vw,18px); color:rgba(255,255,255,0.85); max-width:620px; margin:0 auto; }
-.hero .tag { display:inline-block; background:rgba(255,192,0,0.15); color:var(--gold); font-size:12px; font-weight:700; padding:5px 14px; border-radius:20px; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px; }
+.hero { background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:32px 24px 36px; text-align:center; position:relative; flex-shrink:0; }
+.hero::after { content:""; position:absolute; bottom:0; left:0; right:0; height:4px; background:var(--gold); }
+.hero .tag { display:inline-block; background:rgba(255,192,0,0.15); color:var(--gold); font-size:11px; font-weight:700; padding:4px 12px; border-radius:20px; letter-spacing:1px; text-transform:uppercase; margin-bottom:12px; }
+.hero h1 { font-family:'Fredoka',sans-serif; font-size:clamp(22px,3.2vw,32px); font-weight:600; margin-bottom:8px; }
+.hero p { font-size:clamp(13px,1.6vw,15px); color:rgba(255,255,255,0.85); max-width:560px; margin:0 auto; }
 
-/* STATS BAR */
-.stats-bar { max-width:1080px; margin:-40px auto 0; padding:0 24px; display:flex; gap:20px; position:relative; z-index:2; }
-.stat { flex:1; background:#fff; border-radius:14px; padding:24px; text-align:center; box-shadow:0 4px 20px rgba(0,32,96,0.1); border:1px solid #eef1f5; }
-.stat .n { font-family:'Fredoka',sans-serif; font-size:34px; font-weight:700; color:var(--navy); }
-.stat .l { font-size:12px; color:var(--gray); text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+/* STATS */
+.stats-bar { max-width:720px; margin:-24px auto 0; padding:0 24px; display:flex; gap:16px; position:relative; z-index:2; flex-shrink:0; }
+.stat { flex:1; background:#fff; border-radius:12px; padding:16px; text-align:center; box-shadow:0 4px 16px rgba(0,32,96,0.1); border:1px solid #eef1f5; }
+.stat .n { font-family:'Fredoka',sans-serif; font-size:26px; font-weight:700; color:var(--navy); }
+.stat .l { font-size:11px; color:var(--gray); text-transform:uppercase; letter-spacing:0.5px; margin-top:2px; }
 
 /* MAIN */
-main { max-width:720px; margin:0 auto; padding:56px 24px; }
-.section-title { text-align:center; margin-bottom:8px; }
-.section-title h2 { font-family:'Fredoka',sans-serif; font-size:26px; color:var(--navy); font-weight:600; }
-.section-title p { color:var(--gray); font-size:15px; margin-top:6px; }
-
-.consulta-panel { background:var(--cream); border-radius:16px; padding:36px; margin-top:28px; border:1px solid #e8ecf2; }
-label { display:block; font-size:12px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
-input[type=text] { width:100%; padding:16px 18px; border:2px solid #d5dbe5; border-radius:10px; font-family:inherit; font-size:17px; transition:border 0.2s; text-align:center; letter-spacing:1px; }
+main { flex:1; max-width:640px; width:100%; margin:0 auto; padding:28px 24px; display:flex; flex-direction:column; justify-content:center; }
+.section-title { text-align:center; margin-bottom:6px; }
+.section-title h2 { font-family:'Fredoka',sans-serif; font-size:22px; color:var(--navy); font-weight:600; }
+.section-title p { color:var(--gray); font-size:14px; margin-top:4px; }
+.consulta-panel { background:var(--cream); border-radius:14px; padding:26px; margin-top:18px; border:1px solid #e8ecf2; }
+label { display:block; font-size:12px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; text-align:center; }
+input[type=text] { width:100%; padding:14px 16px; border:2px solid #d5dbe5; border-radius:10px; font-family:inherit; font-size:17px; text-align:center; letter-spacing:1px; }
 input[type=text]:focus { border-color:var(--navy); outline:none; }
 input.valid { border-color:var(--green); } input.invalid { border-color:var(--red); }
-.btn { width:100%; padding:16px; border:none; border-radius:10px; font-family:inherit; font-size:16px; font-weight:700; cursor:pointer; margin-top:18px; transition:all 0.2s; }
-.btn-primary { background:var(--navy); color:#fff; } .btn-primary:hover { background:#003090; transform:translateY(-1px); } .btn-primary:disabled { background:#b0b8c4; cursor:not-allowed; transform:none; }
-.btn-gold { background:var(--gold); color:var(--navy); } .btn-gold:hover { background:#ffd040; }
+.btn { width:100%; padding:15px; border:none; border-radius:10px; font-family:inherit; font-size:16px; font-weight:700; cursor:pointer; margin-top:16px; transition:all 0.2s; }
+.btn-primary { background:var(--navy); color:#fff; } .btn-primary:hover { background:#003090; } .btn-primary:disabled { background:#b0b8c4; cursor:not-allowed; }
+.btn-gold { background:var(--gold); color:var(--navy); }
 .hint { font-size:12px; color:var(--gray); margin-top:10px; text-align:center; }
-.error-msg { background:#fdecea; color:var(--red); padding:14px 16px; border-radius:10px; font-size:14px; margin-top:14px; display:none; text-align:center; }
+.error-msg { background:#fdecea; color:var(--red); padding:12px 16px; border-radius:10px; font-size:14px; margin-top:12px; display:none; text-align:center; }
 
 /* RESULTADO */
-.fam-card { border:1px solid #e0e6ee; border-radius:14px; padding:22px; margin:16px 0; display:flex; align-items:center; gap:18px; background:#fff; box-shadow:0 2px 10px rgba(0,32,96,0.04); }
-.fam-icon { flex-shrink:0; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; }
-.fam-icon.ok { background:#e8f5e9; } .fam-icon.no { background:#fff3e0; }
-.fam-info { flex:1; }
-.fam-info .name { font-size:17px; font-weight:700; color:var(--navy); }
+.fam-card { border:1px solid #e0e6ee; border-radius:12px; padding:18px; margin:12px 0; display:flex; align-items:center; gap:16px; background:#fff; box-shadow:0 2px 8px rgba(0,32,96,0.04); }
+.fam-icon { flex-shrink:0; width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:22px; }
+.fam-icon.ok { background:#e8f5e9; color:var(--green); } .fam-icon.no { background:#fff3e0; color:#e65100; }
+.fam-info { flex:1; text-align:left; }
+.fam-info .name { font-size:16px; font-weight:700; color:var(--navy); }
 .fam-info .detail { font-size:13px; color:var(--gray); margin-top:2px; }
 .fam-badge { font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; white-space:nowrap; }
 .badge-ok { background:#e8f5e9; color:var(--green); } .badge-no { background:#fff3e0; color:#e65100; }
-.result-head { text-align:center; margin-bottom:8px; }
-.result-head h2 { font-family:'Fredoka',sans-serif; color:var(--navy); font-size:24px; }
-.result-head p { color:var(--gray); font-size:14px; }
-.info-box { background:#fffbea; border:1px solid var(--gold); border-radius:14px; padding:22px; margin-top:20px; text-align:center; }
-.info-box h3 { color:var(--navy); font-size:16px; margin-bottom:6px; }
-.info-box p { font-size:14px; color:#5a5a3a; margin-bottom:12px; }
-.link-back { display:inline-block; margin-top:22px; color:var(--navy); font-size:14px; text-decoration:none; font-weight:600; cursor:pointer; }
+.result-head { text-align:center; margin-bottom:6px; }
+.result-head h2 { font-family:'Fredoka',sans-serif; color:var(--navy); font-size:22px; }
+.result-head p { color:var(--gray); font-size:13px; }
+.info-box { background:#fffbea; border:1px solid var(--gold); border-radius:12px; padding:18px; margin-top:16px; text-align:center; }
+.info-box h3 { color:var(--navy); font-size:15px; margin-bottom:4px; }
+.info-box p { font-size:13px; color:#5a5a3a; margin-bottom:10px; }
+.link-back { display:inline-block; margin-top:16px; color:var(--navy); font-size:14px; text-decoration:none; font-weight:600; cursor:pointer; }
 .link-back:hover { text-decoration:underline; }
 
 /* FOOTER */
-footer { background:var(--navy); color:rgba(255,255,255,0.75); padding:32px 24px; text-align:center; margin-top:40px; }
-footer .fbrand { color:#fff; font-weight:700; font-size:14px; }
-footer .fdata { font-size:12px; margin-top:6px; line-height:1.6; }
+footer { background:var(--navy); color:rgba(255,255,255,0.75); padding:16px 24px; text-align:center; flex-shrink:0; }
+footer .fbrand { color:#fff; font-weight:700; font-size:13px; }
+footer .fdata { font-size:11px; margin-top:4px; }
 footer a { color:var(--gold); text-decoration:none; }
 
 .hidden { display:none; }
-@media (max-width:560px){ .stats-bar{ flex-direction:column; } .consulta-panel{ padding:24px; } }
+@media (max-width:560px){ .stats-bar{ flex-direction:column; margin-top:-16px; } body{ min-height:auto; } }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-brand">
@@ -90,67 +89,59 @@ footer a { color:var(--gold); text-decoration:none; }
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <span class="tag">Portal de la comunidad</span>
-  <h1>Bienvenido al Centro de Padres y Apoderados</h1>
-  <p>Un espacio de la comunidad Bradford. Aquí puedes consultar si tu familia se encuentra registrada como socia activa del Centro de Padres.</p>
+  <h1>Centro de Padres y Apoderados</h1>
+  <p>Consulta si tu familia se encuentra registrada como socia activa del Centro de Padres Bradford.</p>
 </section>
 
-<!-- STATS -->
 <div class="stats-bar">
   <div class="stat"><div class="n" id="s-fam">—</div><div class="l">Familias en la comunidad</div></div>
   <div class="stat"><div class="n" id="s-soc">—</div><div class="l">Familias socias activas</div></div>
 </div>
 
-<!-- MAIN -->
 <main>
-
-  <!-- VISTA CONSULTA -->
   <div id="v-consulta">
     <div class="section-title">
-      <h2>Consulta tu estado de socio</h2>
-      <p>Ingresa tu RUT para ver si tu familia es socia activa del CPA.</p>
+      <h2>Consulta tu estado</h2>
+      <p>Ingresa tu RUT para ver si tu familia es socia activa.</p>
     </div>
     <div class="consulta-panel">
       <label for="rut">Tu RUT</label>
       <input type="text" id="rut" placeholder="12.345.678-9" autocomplete="off" maxlength="12">
       <div class="error-msg" id="err-rut"></div>
-      <button class="btn btn-primary" id="btn-consultar" onclick="consultar()">Consultar mi estado</button>
+      <button class="btn btn-primary" id="btn-consultar" onclick="consultar()">Consultar</button>
       <p class="hint">Consulta segura. Solo mostramos el estado de socio de tu familia.</p>
     </div>
   </div>
 
-  <!-- VISTA RESULTADO -->
   <div id="v-resultado" class="hidden">
     <div class="result-head">
-      <h2 id="saludo"></h2>
-      <p>Este es el estado de tu(s) grupo(s) familiar(es) en el Centro de Padres.</p>
+      <h2>Estado de tu familia</h2>
+      <p>Situación de tu(s) grupo(s) familiar(es) en el Centro de Padres.</p>
     </div>
     <div id="fam-list"></div>
     <div class="info-box hidden" id="info-no-socio">
       <h3>¿Quieres que tu familia sea socia?</h3>
-      <p>Ser socio del CPA te permite participar de las asambleas y decisiones de la comunidad. La cuota es anual y por familia.</p>
+      <p>Ser socio del CPA permite participar de las asambleas y decisiones de la comunidad. La cuota es anual y por familia.</p>
       <button class="btn btn-gold" onclick="infoSocio()">Cómo hacerme socio</button>
     </div>
     <div style="text-align:center;">
       <a class="link-back" onclick="reset()">&larr; Consultar otro RUT</a>
     </div>
   </div>
-
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="fbrand">Centro de Padres y Apoderados — Bradford School</div>
-  <div class="fdata">Tahití N°6428, Vitacura, Santiago · <a href="mailto:parents@bradford.cl">parents@bradford.cl</a></div>
+  <div class="fdata">Tahití N°6428, Vitacura · <a href="mailto:parents@bradford.cl">parents@bradford.cl</a></div>
 </footer>
 
 <script>
 const API_URL = "https://yliaxnhgdradkmatupai.supabase.co/functions/v1/cpa-api";
 const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlsaWF4bmhnZHJhZGttYXR1cGFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzODMxOTksImV4cCI6MjEwMzk1OTE5OX0.0RvMbxIgsqrttvh2rv-B7Vrnix0cCwyAO1fABhKGtIE";
 
-let usuario=null, familias=[];
+let familias=[];
 
 function limpiaRut(r){ return r.replace(/[^0-9kK]/g,"").toUpperCase(); }
 function formateaRut(r){ r=limpiaRut(r); if(r.length===0)return""; if(r.length===1)return r;
@@ -185,34 +176,17 @@ async function consultar(){
   if(!validaDv(val)){ err.textContent="El RUT no es válido. Revisa el dígito verificador."; err.style.display="block"; return; }
   const btn=document.getElementById("btn-consultar"); btn.disabled=true; btn.textContent="Consultando...";
   const r=await api("consultar",{ rut: val });
-  btn.disabled=false; btn.textContent="Consultar mi estado";
+  btn.disabled=false; btn.textContent="Consultar";
   if(!r.ok){
     err.textContent = r.error==="no_encontrado" ? "El RUT no figura como apoderado en el colegio. Verifica el número o contacta al Centro de Padres."
       : r.error==="demasiadas_consultas" ? "Demasiadas consultas. Intenta más tarde." : "Ocurrió un error. Intenta nuevamente.";
     err.style.display="block"; return;
   }
-  usuario={ rut: formateaRut(val), nombre: r.nombre };
   familias=r.familias;
   mostrarResultado();
 }
 
-function extraerNombrePila(nombreCompleto, apellidos){
-  // El nombre viene como "ApellidoP ApellidoM Nombres". Quitamos los apellidos de la familia.
-  const norm = s => (s||"").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();
-  const apellidosSet = norm(apellidos).split(/\s+/).filter(Boolean);
-  const palabras = (nombreCompleto||"").trim().split(/\s+/);
-  // Descartar las palabras iniciales que coincidan con apellidos
-  const nombres = palabras.filter(p => !apellidosSet.includes(norm(p)));
-  // Si quedó vacío (raro), usar la última palabra
-  const pila = nombres.length ? nombres[0] : palabras[palabras.length-1];
-  return pila.charAt(0).toUpperCase() + pila.slice(1).toLowerCase();
-}
-
 function mostrarResultado(){
-  // Usar los apellidos de la primera familia para limpiar el nombre
-  const apellidos = familias[0] ? familias[0].familia : "";
-  const primerNombre = extraerNombrePila(usuario.nombre, apellidos);
-  document.getElementById("saludo").textContent = `Hola, ${primerNombre}`;
   const cont=document.getElementById("fam-list"); cont.innerHTML="";
   let hayNoSocio=false;
   familias.forEach(f=>{
@@ -222,7 +196,7 @@ function mostrarResultado(){
     div.innerHTML=
       `<div class="fam-icon ${ok?'ok':'no'}">${ok?'&#10003;':'&#8226;'}</div>`+
       `<div class="fam-info"><div class="name">Familia ${f.familia}</div><div class="detail">${f.alumnos}</div></div>`+
-      `<div class="fam-badge ${ok?'badge-ok':'badge-no'}">${ok?'Socia activa':'No socia'}</div>`;
+      `<div class="fam-badge ${ok?'badge-ok':'badge-no'}">${ok?'Socio activo':'No socio'}</div>`;
     cont.appendChild(div);
   });
   document.getElementById("info-no-socio").classList.toggle("hidden",!hayNoSocio);
@@ -232,8 +206,8 @@ function mostrarResultado(){
 function infoSocio(){ alert("Para hacerte socio del Centro de Padres, contacta a parents@bradford.cl o realiza el aporte en el proceso de matrícula. Próximamente podrás inscribirte en línea."); }
 
 function show(id){ ["v-consulta","v-resultado"].forEach(v=>document.getElementById(v).classList.add("hidden"));
-  document.getElementById(id).classList.remove("hidden"); window.scrollTo({top:0,behavior:'smooth'}); }
-function reset(){ usuario=null;familias=[]; rutInput.value=""; rutInput.classList.remove("valid","invalid"); show("v-consulta"); }
+  document.getElementById(id).classList.remove("hidden"); }
+function reset(){ familias=[]; rutInput.value=""; rutInput.classList.remove("valid","invalid"); show("v-consulta"); }
 </script>
 </body>
 </html>
