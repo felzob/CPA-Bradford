@@ -3,153 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Centro de Padres Bradford — Portal de Socios</title>
+<title>Centro de Padres y Apoderados — Bradford School</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
-:root { --navy:#002060; --gold:#FFC000; --green:#2e7d32; --red:#c62828; --gray:#6B7B8D; }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Fredoka:wght@500;600;700&display=swap');
+:root { --navy:#002060; --navy-deep:#001845; --gold:#FFC000; --green:#2e7d32; --red:#c62828; --gray:#6B7B8D; --cream:#f7f8fa; }
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Open Sans',sans-serif; background:#eef1f5; color:#1E3155; min-height:100vh; padding:20px; }
-.container { max-width:640px; margin:0 auto; }
-.header { background:var(--navy); border-radius:12px 12px 0 0; padding:22px 28px; display:flex; align-items:center; justify-content:space-between; }
-.header .brand { color:#fff; font-weight:700; font-size:15px; }
-.header .brand span { display:block; font-size:12px; color:rgba(255,255,255,0.8); font-weight:400; }
-.header .years { color:var(--gold); font-size:11px; font-weight:700; }
-.gold-line { height:4px; background:var(--gold); }
-.card { background:#fff; padding:28px; box-shadow:0 2px 12px rgba(0,0,0,0.06); border-radius:0 0 12px 12px; }
-h1 { font-size:19px; color:var(--navy); margin-bottom:6px; }
-.sub { font-size:13px; color:var(--gray); margin-bottom:22px; line-height:1.6; }
-label { display:block; font-size:12px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
-input[type=text] { width:100%; padding:13px 15px; border:1px solid #ccc; border-radius:8px; font-family:inherit; font-size:15px; }
+body { font-family:'Open Sans',sans-serif; color:#1E3155; background:#fff; line-height:1.6; }
+
+/* NAVBAR */
+.nav { background:var(--navy); padding:16px 0; }
+.nav-inner { max-width:1080px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:14px; }
+.nav-brand img { height:46px; }
+.nav-brand .txt { color:#fff; font-weight:700; font-size:15px; line-height:1.2; }
+.nav-brand .txt span { display:block; font-size:11px; color:rgba(255,255,255,0.7); font-weight:400; }
+.nav .years { color:var(--gold); font-size:12px; font-weight:700; letter-spacing:1px; }
+
+/* HERO */
+.hero { background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:56px 24px 64px; text-align:center; position:relative; overflow:hidden; }
+.hero::after { content:""; position:absolute; bottom:0; left:0; right:0; height:5px; background:var(--gold); }
+.hero h1 { font-family:'Fredoka',sans-serif; font-size:clamp(26px,4vw,40px); font-weight:600; margin-bottom:14px; }
+.hero p { font-size:clamp(15px,2vw,18px); color:rgba(255,255,255,0.85); max-width:620px; margin:0 auto; }
+.hero .tag { display:inline-block; background:rgba(255,192,0,0.15); color:var(--gold); font-size:12px; font-weight:700; padding:5px 14px; border-radius:20px; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px; }
+
+/* STATS BAR */
+.stats-bar { max-width:1080px; margin:-40px auto 0; padding:0 24px; display:flex; gap:20px; position:relative; z-index:2; }
+.stat { flex:1; background:#fff; border-radius:14px; padding:24px; text-align:center; box-shadow:0 4px 20px rgba(0,32,96,0.1); border:1px solid #eef1f5; }
+.stat .n { font-family:'Fredoka',sans-serif; font-size:34px; font-weight:700; color:var(--navy); }
+.stat .l { font-size:12px; color:var(--gray); text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+
+/* MAIN */
+main { max-width:720px; margin:0 auto; padding:56px 24px; }
+.section-title { text-align:center; margin-bottom:8px; }
+.section-title h2 { font-family:'Fredoka',sans-serif; font-size:26px; color:var(--navy); font-weight:600; }
+.section-title p { color:var(--gray); font-size:15px; margin-top:6px; }
+
+.consulta-panel { background:var(--cream); border-radius:16px; padding:36px; margin-top:28px; border:1px solid #e8ecf2; }
+label { display:block; font-size:12px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
+input[type=text] { width:100%; padding:16px 18px; border:2px solid #d5dbe5; border-radius:10px; font-family:inherit; font-size:17px; transition:border 0.2s; text-align:center; letter-spacing:1px; }
 input[type=text]:focus { border-color:var(--navy); outline:none; }
 input.valid { border-color:var(--green); } input.invalid { border-color:var(--red); }
-.otp-input { text-align:center; font-size:28px; letter-spacing:12px; font-weight:700; }
-.hint { font-size:11px; color:var(--gray); margin-top:6px; line-height:1.5; }
-.btn { display:inline-block; width:100%; padding:14px; border:none; border-radius:8px; font-family:inherit; font-size:15px; font-weight:700; cursor:pointer; margin-top:16px; }
-.btn-primary { background:var(--navy); color:#fff; } .btn-primary:hover { background:#003090; } .btn-primary:disabled { background:#b0b8c4; cursor:not-allowed; }
-.btn-gold { background:var(--gold); color:var(--navy); }
-.btn-ghost { background:transparent; color:var(--navy); border:1px solid var(--navy); }
-.fam-card { border:2px solid #e0e0e0; border-radius:10px; padding:16px; margin:12px 0; position:relative; }
-.fam-card .fam-name { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:4px; }
-.fam-card .fam-detail { font-size:12px; color:var(--gray); line-height:1.5; }
-.fam-status { display:inline-block; font-size:11px; font-weight:700; padding:3px 10px; border-radius:10px; margin-top:8px; }
-.st-active { background:#e8f5e9; color:var(--green); } .st-no { background:#fff3e0; color:#e65100; }
-.selectable { cursor:pointer; } .selectable:hover { border-color:var(--navy); }
-.selected { border-color:var(--navy); background:rgba(0,32,96,0.03); }
-.blocked { border-color:#e0c0c0; background:#fdf4f4; opacity:0.85; }
-.check { position:absolute; top:14px; right:14px; width:24px; height:24px; border-radius:50%; border:2px solid #ccc; display:flex; align-items:center; justify-content:center; color:#fff; }
-.selected .check { background:var(--navy); border-color:var(--navy); }
-.consent-box { background:#f0f4f8; border-left:4px solid var(--navy); padding:16px 18px; border-radius:0 8px 8px 0; margin:16px 0; font-size:13px; line-height:1.7; }
-.checkbox-row { display:flex; align-items:flex-start; gap:10px; margin:16px 0; }
-.checkbox-row input { width:20px; height:20px; margin-top:2px; accent-color:var(--navy); flex-shrink:0; }
-.checkbox-row label { font-size:13px; font-weight:400; text-transform:none; letter-spacing:0; color:#333; line-height:1.6; margin:0; }
-.email-mask { background:#f0f4f8; border-radius:8px; padding:12px 15px; font-size:14px; color:var(--navy); font-weight:600; text-align:center; margin:10px 0; }
-.result-icon { width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:32px; color:#fff; margin:0 auto 18px; }
-.ico-ok { background:var(--green); } .ico-info { background:var(--gold); color:var(--navy); }
-.result { text-align:center; } .result h2 { font-size:20px; margin-bottom:8px; } .result p { font-size:14px; color:#555; line-height:1.6; }
-.not-socio-box { background:#fff8e0; border:1px solid var(--gold); border-radius:10px; padding:18px; margin:16px 0; text-align:center; }
-.not-socio-box p { font-size:13px; color:#333; margin-bottom:6px; }
-.error-msg { background:#fdecea; color:var(--red); padding:12px 15px; border-radius:8px; font-size:13px; margin-top:12px; display:none; }
-.stats { display:flex; gap:10px; margin-top:18px; }
-.stat { flex:1; background:var(--navy); color:#fff; border-radius:10px; padding:14px; text-align:center; }
-.stat .n { font-size:22px; font-weight:800; color:var(--gold); } .stat .l { font-size:10px; text-transform:uppercase; opacity:0.8; margin-top:2px; }
+.btn { width:100%; padding:16px; border:none; border-radius:10px; font-family:inherit; font-size:16px; font-weight:700; cursor:pointer; margin-top:18px; transition:all 0.2s; }
+.btn-primary { background:var(--navy); color:#fff; } .btn-primary:hover { background:#003090; transform:translateY(-1px); } .btn-primary:disabled { background:#b0b8c4; cursor:not-allowed; transform:none; }
+.btn-gold { background:var(--gold); color:var(--navy); } .btn-gold:hover { background:#ffd040; }
+.hint { font-size:12px; color:var(--gray); margin-top:10px; text-align:center; }
+.error-msg { background:#fdecea; color:var(--red); padding:14px 16px; border-radius:10px; font-size:14px; margin-top:14px; display:none; text-align:center; }
+
+/* RESULTADO */
+.fam-card { border:1px solid #e0e6ee; border-radius:14px; padding:22px; margin:16px 0; display:flex; align-items:center; gap:18px; background:#fff; box-shadow:0 2px 10px rgba(0,32,96,0.04); }
+.fam-icon { flex-shrink:0; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; }
+.fam-icon.ok { background:#e8f5e9; } .fam-icon.no { background:#fff3e0; }
+.fam-info { flex:1; }
+.fam-info .name { font-size:17px; font-weight:700; color:var(--navy); }
+.fam-info .detail { font-size:13px; color:var(--gray); margin-top:2px; }
+.fam-badge { font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; white-space:nowrap; }
+.badge-ok { background:#e8f5e9; color:var(--green); } .badge-no { background:#fff3e0; color:#e65100; }
+.result-head { text-align:center; margin-bottom:8px; }
+.result-head h2 { font-family:'Fredoka',sans-serif; color:var(--navy); font-size:24px; }
+.result-head p { color:var(--gray); font-size:14px; }
+.info-box { background:#fffbea; border:1px solid var(--gold); border-radius:14px; padding:22px; margin-top:20px; text-align:center; }
+.info-box h3 { color:var(--navy); font-size:16px; margin-bottom:6px; }
+.info-box p { font-size:14px; color:#5a5a3a; margin-bottom:12px; }
+.link-back { display:inline-block; margin-top:22px; color:var(--navy); font-size:14px; text-decoration:none; font-weight:600; cursor:pointer; }
+.link-back:hover { text-decoration:underline; }
+
+/* FOOTER */
+footer { background:var(--navy); color:rgba(255,255,255,0.75); padding:32px 24px; text-align:center; margin-top:40px; }
+footer .fbrand { color:#fff; font-weight:700; font-size:14px; }
+footer .fdata { font-size:12px; margin-top:6px; line-height:1.6; }
+footer a { color:var(--gold); text-decoration:none; }
+
 .hidden { display:none; }
-.back-link { font-size:12px; color:var(--gray); cursor:pointer; text-decoration:underline; margin-top:16px; display:inline-block; }
-.demo-note { background:#fff8e0; border:1px dashed var(--gold); border-radius:6px; padding:8px 12px; font-size:11px; text-align:center; margin-top:12px; color:#8a6d00; }
+@media (max-width:560px){ .stats-bar{ flex-direction:column; } .consulta-panel{ padding:24px; } }
 </style>
 </head>
 <body>
-<div class="container">
 
-<div class="header">
-<div class="brand">Centro de Padres y Apoderados<span>Bradford School</span></div>
-<div class="years">+70 YEARS</div>
-</div>
-<div class="gold-line"></div>
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img src="logo.png" alt="Bradford School" onerror="this.style.display='none'">
+      <div class="txt">Centro de Padres y Apoderados<span>Bradford School</span></div>
+    </div>
+    <div class="years">+70 YEARS</div>
+  </div>
+</nav>
 
-<!-- CONSULTA -->
-<div class="card" id="v-consulta">
-<h1>Portal de Socios del CPA</h1>
-<p class="sub">Consulta si tu familia es socia activa del Centro de Padres. Ingresa tu RUT.</p>
-<label for="rut">Tu RUT</label>
-<input type="text" id="rut" placeholder="12.345.678-9" autocomplete="off" maxlength="12">
-<div class="error-msg" id="err-rut"></div>
-<button class="btn btn-primary" id="btn-consultar" onclick="consultar()">Consultar mi estado</button>
-<div class="stats" id="stats"></div>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <span class="tag">Portal de la comunidad</span>
+  <h1>Bienvenido al Centro de Padres y Apoderados</h1>
+  <p>Un espacio de la comunidad Bradford. Aquí puedes consultar si tu familia se encuentra registrada como socia activa del Centro de Padres.</p>
+</section>
 
-<!-- RESULTADO CONSULTA -->
-<div class="card hidden" id="v-resultado">
-<h1 id="saludo"></h1>
-<p class="sub">Este es el estado de tu(s) grupo(s) familiar(es) en el Centro de Padres.</p>
-<div id="fam-list"></div>
-<div class="not-socio-box hidden" id="not-socio">
-<p><strong>¿Tu familia no es socia activa?</strong></p>
-<p>Puedes hacerte socio del CPA pagando la cuota anual.</p>
-<button class="btn btn-gold" onclick="irAPago()" style="margin-top:10px;">Quiero ser socio</button>
-</div>
-<div id="accion-firma" class="hidden">
-<button class="btn btn-primary" onclick="irAFirma()">Firmar solicitud de convocatoria a Asamblea</button>
-</div>
-<span class="back-link" onclick="reset()">Consultar otro RUT</span>
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="n" id="s-fam">—</div><div class="l">Familias en la comunidad</div></div>
+  <div class="stat"><div class="n" id="s-soc">—</div><div class="l">Familias socias activas</div></div>
 </div>
 
-<!-- SELECCION PARA FIRMAR -->
-<div class="card hidden" id="v-firma-sel">
-<h1>Solicitud de convocatoria</h1>
-<p class="sub">Selecciona el/los grupo(s) familiar(es) por los que deseas solicitar la convocatoria a Asamblea Extraordinaria (Art. 16°). Solo pueden firmar las familias socias activas.</p>
-<div id="fam-firma-list"></div>
-<div class="error-msg" id="err-firma"></div>
-<button class="btn btn-primary" id="btn-firma-cont" onclick="goToConsent()" disabled>Continuar</button>
-<span class="back-link" onclick="volverResultado()">Volver</span>
-</div>
+<!-- MAIN -->
+<main>
 
-<!-- CONSENTIMIENTO -->
-<div class="card hidden" id="v-consent">
-<h1>Consentimiento</h1>
-<p class="sub">Para firmar verificaremos tu identidad con un código enviado a tu correo registrado.</p>
-<div class="consent-box" id="consent-text"></div>
-<div class="checkbox-row">
-<input type="checkbox" id="consent-check" onchange="document.getElementById('btn-sendotp').disabled=!this.checked">
-<label for="consent-check">Declaro ser apoderado(a) del/los grupo(s) seleccionado(s), socio(s) activo(s) del CPA, y <strong>solicito la convocatoria a Asamblea General Extraordinaria</strong> conforme al Art. 16° de los estatutos.</label>
-</div>
-<p class="hint">Esta solicitud es solo para convocar la asamblea; no constituye el voto, que se ejerce el día de la asamblea.</p>
-<button class="btn btn-primary" id="btn-sendotp" onclick="sendOtp()" disabled>Continuar a verificación</button>
-<span class="back-link" onclick="showView('v-firma-sel')">Volver</span>
-</div>
+  <!-- VISTA CONSULTA -->
+  <div id="v-consulta">
+    <div class="section-title">
+      <h2>Consulta tu estado de socio</h2>
+      <p>Ingresa tu RUT para ver si tu familia es socia activa del CPA.</p>
+    </div>
+    <div class="consulta-panel">
+      <label for="rut">Tu RUT</label>
+      <input type="text" id="rut" placeholder="12.345.678-9" autocomplete="off" maxlength="12">
+      <div class="error-msg" id="err-rut"></div>
+      <button class="btn btn-primary" id="btn-consultar" onclick="consultar()">Consultar mi estado</button>
+      <p class="hint">Consulta segura. Solo mostramos el estado de socio de tu familia.</p>
+    </div>
+  </div>
 
-<!-- OTP -->
-<div class="card hidden" id="v-otp">
-<h1>Verifica tu identidad</h1>
-<p class="sub">Enviamos un código de 6 dígitos a tu correo registrado. Tienes hasta 5 intentos.</p>
-<div class="email-mask" id="email-mask"></div>
-<label for="otp">Código de verificación</label>
-<input type="text" id="otp" class="otp-input" placeholder="------" autocomplete="off" maxlength="6" inputmode="numeric">
-<div class="error-msg" id="err-otp"></div>
-<button class="btn btn-gold" id="btn-verify" onclick="verifyAndSign()">Verificar y firmar</button>
-<span class="back-link" onclick="showView('v-consent')">Volver</span>
-</div>
+  <!-- VISTA RESULTADO -->
+  <div id="v-resultado" class="hidden">
+    <div class="result-head">
+      <h2 id="saludo"></h2>
+      <p>Este es el estado de tu(s) grupo(s) familiar(es) en el Centro de Padres.</p>
+    </div>
+    <div id="fam-list"></div>
+    <div class="info-box hidden" id="info-no-socio">
+      <h3>¿Quieres que tu familia sea socia?</h3>
+      <p>Ser socio del CPA te permite participar de las asambleas y decisiones de la comunidad. La cuota es anual y por familia.</p>
+      <button class="btn btn-gold" onclick="infoSocio()">Cómo hacerme socio</button>
+    </div>
+    <div style="text-align:center;">
+      <a class="link-back" onclick="reset()">&larr; Consultar otro RUT</a>
+    </div>
+  </div>
 
-<!-- EXITO -->
-<div class="card hidden" id="v-exito">
-<div class="result">
-<div class="result-icon ico-ok">&#10003;</div>
-<h2 style="color:var(--green)">Solicitud registrada</h2>
-<p id="exito-detail"></p>
-</div>
-<button class="btn btn-primary" onclick="reset()" style="margin-top:20px;">Volver al inicio</button>
-</div>
+</main>
 
-<div class="demo-note" id="demo-note"></div>
-
-</div>
+<!-- FOOTER -->
+<footer>
+  <div class="fbrand">Centro de Padres y Apoderados — Bradford School</div>
+  <div class="fdata">Tahití N°6428, Vitacura, Santiago · <a href="mailto:parents@bradford.cl">parents@bradford.cl</a></div>
+</footer>
 
 <script>
-// ============ CONFIG (completar al desplegar) ============
 const API_URL = "https://yliaxnhgdradkmatupai.supabase.co/functions/v1/cpa-api";
 const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlsaWF4bmhnZHJhZGttYXR1cGFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzODMxOTksImV4cCI6MjEwMzk1OTE5OX0.0RvMbxIgsqrttvh2rv-B7Vrnix0cCwyAO1fABhKGtIE";
-const PAGO_URL = "#";
 
-let usuario=null, familias=[], seleccionadas=[], emailMasked="";
+let usuario=null, familias=[];
 
 function limpiaRut(r){ return r.replace(/[^0-9kK]/g,"").toUpperCase(); }
 function formateaRut(r){ r=limpiaRut(r); if(r.length===0)return""; if(r.length===1)return r;
@@ -163,7 +164,7 @@ rutInput.addEventListener("input",function(){ this.value=formateaRut(this.value)
   const c=limpiaRut(this.value);
   if(c.length>=2){ this.classList.toggle("valid",validaDv(this.value)); this.classList.toggle("invalid",!validaDv(this.value)); }
   else this.classList.remove("valid","invalid"); });
-document.getElementById("otp").addEventListener("input",function(){ this.value=this.value.replace(/[^0-9]/g,""); });
+rutInput.addEventListener("keydown",function(e){ if(e.key==="Enter") consultar(); });
 
 async function api(action, body){
   const res=await fetch(`${API_URL}?action=${action}`,{ method:"POST",
@@ -174,9 +175,8 @@ async function api(action, body){
 
 (async function(){ try{ const r=await api("estadisticas",{});
   if(r.ok&&r.estadisticas){ const e=r.estadisticas;
-    document.getElementById("stats").innerHTML=
-      `<div class="stat"><div class="n">${e.total_familias}</div><div class="l">Familias</div></div>`+
-      `<div class="stat"><div class="n">${e.socios_activos}</div><div class="l">Socios activos</div></div>`;
+    document.getElementById("s-fam").textContent=e.total_familias;
+    document.getElementById("s-soc").textContent=e.socios_activos;
   }}catch(e){} })();
 
 async function consultar(){
@@ -187,8 +187,8 @@ async function consultar(){
   const r=await api("consultar",{ rut: val });
   btn.disabled=false; btn.textContent="Consultar mi estado";
   if(!r.ok){
-    err.textContent = r.error==="no_encontrado" ? "El RUT no figura como apoderado. Verifica o contacta al colegio."
-      : r.error==="demasiadas_consultas" ? "Demasiadas consultas. Intenta más tarde." : "Error al consultar.";
+    err.textContent = r.error==="no_encontrado" ? "El RUT no figura como apoderado en el colegio. Verifica el número o contacta al Centro de Padres."
+      : r.error==="demasiadas_consultas" ? "Demasiadas consultas. Intenta más tarde." : "Ocurrió un error. Intenta nuevamente.";
     err.style.display="block"; return;
   }
   usuario={ rut: formateaRut(val), nombre: r.nombre };
@@ -197,81 +197,29 @@ async function consultar(){
 }
 
 function mostrarResultado(){
-  document.getElementById("saludo").textContent=`Hola, ${usuario.nombre.split(" ")[0]}`;
+  const primerNombre = usuario.nombre.split(" ")[0];
+  document.getElementById("saludo").textContent = `Hola, ${primerNombre}`;
   const cont=document.getElementById("fam-list"); cont.innerHTML="";
-  let hayNoSocio=false, haySocioSinFirmar=false;
+  let hayNoSocio=false;
   familias.forEach(f=>{
-    const st = f.socio_activo
-      ? '<span class="fam-status st-active">Socia activa</span>'
-      : '<span class="fam-status st-no">No socia · puede inscribirse</span>';
-    if(!f.socio_activo) hayNoSocio=true; else haySocioSinFirmar=true;
+    const ok=f.socio_activo;
+    if(!ok) hayNoSocio=true;
     const div=document.createElement("div"); div.className="fam-card";
-    div.innerHTML=`<div class="fam-name">${f.familia}</div><div class="fam-detail">${f.alumnos}</div>${st}`;
+    div.innerHTML=
+      `<div class="fam-icon ${ok?'ok':'no'}">${ok?'&#10003;':'&#8226;'}</div>`+
+      `<div class="fam-info"><div class="name">Familia ${f.familia}</div><div class="detail">${f.alumnos}</div></div>`+
+      `<div class="fam-badge ${ok?'badge-ok':'badge-no'}">${ok?'Socia activa':'No socia'}</div>`;
     cont.appendChild(div);
   });
-  document.getElementById("not-socio").classList.toggle("hidden",!hayNoSocio);
-  document.getElementById("accion-firma").classList.toggle("hidden",!haySocioSinFirmar);
-  showView("v-resultado");
+  document.getElementById("info-no-socio").classList.toggle("hidden",!hayNoSocio);
+  show("v-resultado");
 }
 
-function irAFirma(){
-  const cont=document.getElementById("fam-firma-list"); cont.innerHTML=""; seleccionadas=[];
-  familias.filter(f=>f.socio_activo).forEach(f=>{
-    const div=document.createElement("div"); div.className="fam-card selectable";
-    div.innerHTML=`<div class="fam-name">${f.familia}</div><div class="fam-detail">${f.alumnos}</div><div class="check">&#10003;</div>`;
-    div.onclick=()=>{ const i=seleccionadas.indexOf(f.id);
-      if(i>=0){seleccionadas.splice(i,1);div.classList.remove("selected");}
-      else{seleccionadas.push(f.id);div.classList.add("selected");}
-      document.getElementById("btn-firma-cont").disabled=seleccionadas.length===0; };
-    cont.appendChild(div);
-  });
-  showView("v-firma-sel");
-}
-function volverResultado(){ showView("v-resultado"); }
+function infoSocio(){ alert("Para hacerte socio del Centro de Padres, contacta a parents@bradford.cl o realiza el aporte en el proceso de matrícula. Próximamente podrás inscribirte en línea."); }
 
-function goToConsent(){ if(!seleccionadas.length)return;
-  const nombres=seleccionadas.map(id=>familias.find(f=>f.id===id).familia);
-  document.getElementById("consent-text").innerHTML=
-    "<strong>Solicito la convocatoria a Asamblea Extraordinaria del CPA</strong> en representación de:<br><br>"+
-    nombres.map(n=>"&bull; "+n).join("<br>")+`<br><br>Firmante: <strong>${usuario.nombre}</strong> · RUT: <strong>${usuario.rut}</strong>`;
-  document.getElementById("consent-check").checked=false;
-  document.getElementById("btn-sendotp").disabled=true;
-  showView("v-consent"); }
-
-async function sendOtp(){
-  const btn=document.getElementById("btn-sendotp"); btn.disabled=true; btn.textContent="Enviando...";
-  const r=await api("enviar_otp",{ rut: usuario.rut });
-  btn.textContent="Continuar a verificación";
-  if(!r.ok){ alert(r.error==="demasiados_codigos"?"Demasiados códigos solicitados. Espera un momento.":"No se pudo enviar el código."); btn.disabled=false; return; }
-  document.getElementById("email-mask").textContent=r.email_masked;
-  document.getElementById("otp").value=""; document.getElementById("err-otp").style.display="none";
-  showView("v-otp");
-}
-
-async function verifyAndSign(){
-  const err=document.getElementById("err-otp"); err.style.display="none";
-  const codigo=document.getElementById("otp").value.trim();
-  if(codigo.length!==6){ err.textContent="Ingresa el código de 6 dígitos."; err.style.display="block"; return; }
-  const btn=document.getElementById("btn-verify"); btn.disabled=true; btn.textContent="Verificando...";
-  const r=await api("verificar_firmar",{ rut: usuario.rut, codigo, familias: seleccionadas });
-  btn.disabled=false; btn.textContent="Verificar y firmar";
-  if(!r.ok){
-    err.textContent = r.error==="otp_invalido" ? `Código incorrecto. Intentos restantes: ${r.intentos_restantes ?? '-'}.`
-      : r.error==="max_intentos" ? "Superaste los intentos. Solicita un nuevo código."
-      : r.error==="otp_expirado" ? "El código expiró. Solicita uno nuevo." : "Error al firmar.";
-    err.style.display="block"; return;
-  }
-  const ok=r.resultados.filter(x=>x.ok).length;
-  document.getElementById("exito-detail").innerHTML=
-    `Se registró tu solicitud para <strong>${ok}</strong> grupo(s) familiar(es).<br>Gracias por tu participación. El voto se ejerce el día de la asamblea.`;
-  showView("v-exito");
-}
-
-function irAPago(){ if(PAGO_URL==="#"){ alert("El pago en línea estará disponible próximamente. Por ahora contacta a parents@bradford.cl"); } else { window.location.href=PAGO_URL; } }
-
-function showView(id){ ["v-consulta","v-resultado","v-firma-sel","v-consent","v-otp","v-exito"].forEach(v=>document.getElementById(v).classList.add("hidden"));
-  document.getElementById(id).classList.remove("hidden"); window.scrollTo(0,0); }
-function reset(){ usuario=null;familias=[];seleccionadas=[]; rutInput.value=""; rutInput.classList.remove("valid","invalid"); showView("v-consulta"); }
+function show(id){ ["v-consulta","v-resultado"].forEach(v=>document.getElementById(v).classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden"); window.scrollTo({top:0,behavior:'smooth'}); }
+function reset(){ usuario=null;familias=[]; rutInput.value=""; rutInput.classList.remove("valid","invalid"); show("v-consulta"); }
 </script>
 </body>
 </html>
