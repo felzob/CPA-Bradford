@@ -1,0 +1,14 @@
+# Datos personales — NUNCA subir al repo
+db/03_seed_data.sql
+db/catastro_familias.json
+*.xlsx
+
+# Credenciales / secrets
+.env
+.env.*
+*.key
+
+# Sistema
+.DS_Store
+node_modules/
+.supabase/
