@@ -18,8 +18,9 @@ body { font-family:'Open Sans',sans-serif; color:#1E3155; background:#fff; line-
 .nav-brand img { height:42px; }
 .nav-brand .txt { color:#fff; font-weight:700; font-size:14px; line-height:1.2; }
 .nav-brand .txt span { display:block; font-size:10px; color:rgba(255,255,255,0.7); font-weight:400; }
-.nav-70-wrap { background:#fff; border-radius:8px; padding:6px 12px; display:flex; align-items:center; }
-.nav-70 { height:22px; display:block; }
+.nav-70 { display:flex; align-items:center; gap:8px; }
+.nav-70 .yrs { color:var(--gold); font-size:15px; font-weight:800; letter-spacing:1px; white-space:nowrap; }
+.nav-70 .flags { display:flex; gap:4px; font-size:14px; line-height:1; }
 
 /* HERO */
 .hero { background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff; padding:32px 24px 36px; text-align:center; position:relative; flex-shrink:0; }
@@ -80,7 +81,7 @@ footer a { color:var(--gold); text-decoration:none; }
   body{ min-height:auto; }
   .nav-brand .txt{ font-size:12px; }
   .nav-brand img{ height:34px; }
-  .nav-70{ height:18px; }
+  .nav-70 .yrs{ font-size:12px; }
 }
 </style>
 </head>
@@ -92,8 +93,9 @@ footer a { color:var(--gold); text-decoration:none; }
       <img src="logo-bradford.png" alt="Bradford School" onerror="this.style.display='none'">
       <div class="txt">Centro de Padres y Apoderados<span>Bradford School</span></div>
     </div>
-    <div class="nav-70-wrap">
-      <img class="nav-70" src="logo-70years.png" alt="+70 Years Bradford" onerror="this.parentElement.style.display='none'">
+    <div class="nav-70">
+      <span class="yrs">+70 YEARS</span>
+      <span class="flags">&#127464;&#127473; &#127468;&#127463;</span>
     </div>
   </div>
 </nav>
